@@ -1,17 +1,27 @@
 interface ButtonProps {
+  as: "button" | "link";
   variant: string;
   disabled: boolean;
-  title: string;
+  text: string;
   onClick?: () => void;
+  href?: string;
 }
 
-const Button = ({variant, disabled, title, onClick }: ButtonProps) => {
+const Button = ({as = 'button', variant, disabled, text, onClick, href}: ButtonProps) => {
 
-  return (
-    <button className={variant} disabled={disabled} onClick={onClick}>
-      {title}
-    </button>
-  );
+  if (as === "button") {
+    return (
+      <button className={variant} disabled={disabled} onClick={onClick}>
+        {text}
+      </button>
+    )
+  } else if (as === "link") {
+    return (
+      <a href={href} className={variant}>
+        {text}
+      </a>
+    )
+  }
 };
 
 export default Button;
