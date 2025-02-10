@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Header = () => {
-  return <nav>sss</nav>;
+  return <nav>header</nav>;
 };
 
 export default Header;
