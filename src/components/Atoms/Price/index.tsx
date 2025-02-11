@@ -1,14 +1,17 @@
+import {CSSProperties} from "react";
+
 interface PriceProps {
   price: string;
   priceCurrency: string;
   pricePeriod: string;
   priceNote?: string;
   variant?: string;
+  style?: CSSProperties;
 }
 
-const Price = ({ price, priceCurrency, pricePeriod, priceNote, variant }: PriceProps) => {
+const Price = ({ price, priceCurrency, pricePeriod, priceNote, variant, style}: PriceProps) => {
   return (
-    <div className="price-offer">
+    <div className="price-offer" style={style}>
       <span className={"price" + "_" + variant}>
         <span className="price-value">{price.split(",")[0]}</span>
         <span className="price-decimal">,{price.split(",")[1]}</span>
