@@ -1,3 +1,23 @@
+/* HEADINGS */
+* {
+	font-family: SkyRegular;
+	color: #4D4D4D;
+}
+
+h1, .h1 {
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 40px;
+	font-family: SkyMedium;
+}
+
+.gradient-primary {
+	background-clip: text;
+	background-color: rgb(245, 100, 0);
+	background-image: linear-gradient(to right, rgb(245, 100, 0) 0%, rgb(255, 0, 0) 25%, rgb(181, 0, 125) 50%, rgb(33, 66, 156) 75%, rgb(0, 113, 255) 100%);
+	-webkit-text-fill-color: transparent;
+}
+/* BUTTONS */
 .btn {
 	align-items: center;
 	border: 2px solid transparent;
@@ -63,4 +83,37 @@
 .btn-disabled:hover {
 	background-color: #E6E6E6;
 	color: #909090;
+}
+
+/* PRICE OFFER */
+.price-offer {
+	display: flex;
+	flex-direction: column;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.price {
+	display: flex;
+	align-content: center;
+}
+.price-value {
+	font-size: 4.75rem;
+}
+.price-right {
+	display: block;
+	padding-top: 0.625rem;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	justify-content: center;
+	white-space: nowrap;
+}
+.currency-right {
+	font-size: 2.25rem;
+}
+.price-period {
+	font-size: 1rem;
+	margin: 0px 0px 0px 0.5rem;
+	background-image: none;
+	background-color: transparent;
 }
