@@ -3,27 +3,21 @@ import { getEntryByUrl } from "@/services";
 
 export default async function Page({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const r = await searchParams;
 
-  //   const post = await queryPostBySlug({ slug })
-  const ooo = await getEntryByUrl(
+  const pageData = await getEntryByUrl(
     "landing_page",
     "it",
     "/" + slug,
-    ["pippo"],
-    ["pippo"]
-    // refUids,
+    ["dynamic", "sticky"],
+    [""]
     // jsonRtePaths
   );
-  //   const slug = (await params).slug;
-  //   const slug = (await params).slug;
-  console.log("DATa----", r);
-  console.log("page", ooo);
+
+  console.log("page", pageData);
   // Render data...
   return <Layout>home</Layout>;
 }
