@@ -96,6 +96,8 @@ h1, .h1 {
 .price {
 	display: flex;
 	align-content: center;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
 }
 .price-value {
 	font-size: 4.75rem;
@@ -116,4 +118,28 @@ h1, .h1 {
 	margin: 0px 0px 0px 0.5rem;
 	background-image: none;
 	background-color: transparent;
+}
+
+.price-old {
+	color: #4d4d4d;
+	background-image: none;
+	background-color: transparent;
+}
+.strikethrough {
+	position: relative;
+}
+.strikethrough:before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 50%;
+	right: 0;
+	border-top: 2px solid;
+	border-color: inherit;
+
+	-webkit-transform:rotate(-20deg);
+	-moz-transform:rotate(-20deg);
+	-ms-transform:rotate(-20deg);
+	-o-transform:rotate(-20deg);
+	transform:rotate(-20deg);
 }

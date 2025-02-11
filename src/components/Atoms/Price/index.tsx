@@ -6,14 +6,16 @@ interface PriceProps {
   pricePeriod: string;
   priceNote?: string;
   variant?: string;
+  isStrikethrough?: boolean;
+  withGradient?: boolean;
   style?: CSSProperties;
 }
 
-const Price = ({price, priceCurrency, pricePeriod, priceNote, variant, style}: PriceProps) => {
+const Price = ({price, priceCurrency, pricePeriod, priceNote, variant, isStrikethrough, withGradient, style}: PriceProps) => {
   return (
       <>
-        <div className="price-offer" style={style}>
-          <span className={"gradient-primary price price" + "_" + variant}>
+        <div className={`price-offer ${isStrikethrough && "price-old strikethrough"}`} style={style}>
+          <span className={`price price_${variant} ${withGradient && "gradient-primary"}`}>
             <span className="price-value">{price.split(",")[0]}</span>
             <div className="price-right">
               <div className="currency-right">

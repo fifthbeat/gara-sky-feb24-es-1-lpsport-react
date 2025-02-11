@@ -1,48 +1,80 @@
 import Image from "next/image";
 import Button from "@/components/Atoms/Button";
 import Price from "@/components/Atoms/Price";
+import Heading from "@/components/Atoms/Heading";
 
 export default function Home() {
   return (
       <>
-        <div style={{margin: "5rem", backgroundColor: "white", padding: "1rem", display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <h1 className="gradient-primary">Price</h1>
-          <Price
-              price="24,90"
-              priceCurrency={"€"}
-              pricePeriod="/mese"
-              priceNote="IVA esclusa"
-              variant="primary"
-          />
+        <div style={{
+          margin: "5rem",
+          backgroundColor: "white",
+          padding: "1rem",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}>
+          <Heading as="h1" withGradient variant="display">Price</Heading>
+          <div style={{
+            margin: "5rem",
+            backgroundColor: "white",
+            padding: "1rem",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: "3rem"
+          }}>
+            <Price
+                price="24,90"
+                priceCurrency={"€"}
+                pricePeriod="/mese"
+                priceNote="IVA esclusa"
+                variant="primary"
+                isStrikethrough
+            />
+            <Price
+                price="24,90"
+                priceCurrency={"€"}
+                pricePeriod="/mese"
+                priceNote="IVA esclusa"
+                variant="primary"
+                withGradient
+            />
+          </div>
         </div>
 
-        <div style={{margin: "5rem", backgroundColor: "white", padding: "1rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem"}}>
-          <h1>Buttons</h1>
+        <div style={{
+          margin: "5rem",
+          backgroundColor: "white",
+          padding: "1rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "1rem"
+        }}>
+          <Heading as="h2" variant="display">Buttons</Heading>
           <div style={{display: "flex", gap: "1rem"}}>
             <Button
                 as="button"
                 variant="btn btn-primary"
                 disabled={false}
-                text="Click me"
-            />
+            >Click me</Button>
             <Button
                 as="button"
                 variant="btn btn-secondary"
                 disabled={false}
-                text="Click me"
-            />
+            >Click me</Button>
             <Button
                 as="button"
                 variant="btn btn-primary btn-disabled"
                 disabled={false}
-                text="Click me"
-            />
+            >Click me</Button>
             <Button
                 as="button"
                 variant="btn btn-secondary btn-disabled"
                 disabled={false}
-                text="Click me"
-            /></div>
+            >Click me</Button>
+          </div>
         </div>
       </>
   );
