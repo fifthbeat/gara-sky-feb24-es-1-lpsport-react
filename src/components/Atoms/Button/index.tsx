@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import {CSSProperties, ReactNode} from "react";
 
 interface ButtonProps {
   as: "button" | "link";
@@ -7,19 +7,20 @@ interface ButtonProps {
   disabled?: boolean;
   onClick?: () => void;
   href?: string;
+  style?: CSSProperties;
 }
 
-const Button = ({children, as = 'button', variant, disabled, onClick, href}: ButtonProps) => {
+const Button = ({children, as = 'button', variant, disabled, onClick, href, style}: ButtonProps) => {
 
   if (as === "button") {
     return (
-      <button className={variant} disabled={disabled} onClick={onClick}>
+      <button className={variant} disabled={disabled} onClick={onClick} style={style}>
         {children}
       </button>
     )
   } else if (as === "link") {
     return (
-      <a href={href} className={variant}>
+      <a href={href} className={variant} style={style}>
         {children}
       </a>
     )
