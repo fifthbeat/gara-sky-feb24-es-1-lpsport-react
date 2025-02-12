@@ -4,7 +4,7 @@ interface PriceProps {
   price: string;
   priceCurrency: string;
   pricePeriod: string;
-  priceNote?: string;
+  priceNote?: any;
   caption?: string;
   variant?: string;
   isStrikethrough?: boolean;
