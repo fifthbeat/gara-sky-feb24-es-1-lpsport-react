@@ -1,26 +1,20 @@
-import {CSSProperties, ReactNode} from "react";
 import Price from "@/components/Atoms/Price";
 import Button from "@/components/Atoms/Button";
 import Heading from "@/components/Atoms/Heading";
+import { redirect } from 'next/navigation'
 
-interface ButtonProps {
-  title: string;
-  text: string;
-  price: string;
-  style?: CSSProperties;
-}
-
-const Hero = ({title, text, price, style}: ButtonProps) => {
-
+const Hero = ({content}: any) => {
+  if (!content)
+    return <></>
   return (
-    <div className={"hero"} style={style}>
-      <Heading as="h1" withGradient variant="display">{title}</Heading>
-      <Heading as="h3" variant="hero-text">{text}</Heading>
+    <div className={"hero"}>
+      <Heading as="h1" withGradient variant="display">{content?.group[0].title.title}</Heading>
+      <Heading as="h3" variant="hero-text">{content?.group[0].description.content}</Heading>
       <Price
-        price={price}
+        price={content?.price.value.toString()}
         priceCurrency={"€"}
-        pricePeriod="/al mese per 18 mesi"
-        priceNote="Nessun costo di attivazione"
+        pricePeriod={content?.price.label}
+        priceNote={content?.price.info}
         variant="primary"
         style={{marginTop: "2.5rem"}}
         withGradient
@@ -31,14 +25,16 @@ const Hero = ({title, text, price, style}: ButtonProps) => {
         variant="link-primary"
       >Dettagli offerta</Button>
       <div className={"hero-buttons"}>
-        <Button
-          as="button"
-          variant="btn btn-secondary"
-        >Ti chiamiamo noi</Button>
-        <Button
-          as="button"
-          variant="btn btn-primary"
-        >Completa l'acquisto</Button>
+        {
+          content?.ctas.map((cta: any, index: number) => (
+            <Button
+              key={"hero_button_" + index}
+              as="button"
+              variant={"btn btn-" + cta.button.variant}
+              onClick={() => redirect(cta.button.link.href)}
+            >{cta.button.label}</Button>
+          ))
+        }
       </div>
     </div>
   )

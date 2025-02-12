@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { getEntryByUrl } from "@/services";
+import ReactMain from "@/app/react";
 
 export default async function Page({
   params,
@@ -19,5 +20,5 @@ export default async function Page({
 
   console.log("page", pageData);
   // Render data...
-  return <Layout>home</Layout>;
+  return <ReactMain pageData={pageData}/>
 }
