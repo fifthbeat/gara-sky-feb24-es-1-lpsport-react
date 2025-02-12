@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import DiscountBanner from "@/components/DiscountBanner";
+import SkyAccordion from "@/components/Atoms/SkyAccordion";
 
 export default function Home() {
   return (
