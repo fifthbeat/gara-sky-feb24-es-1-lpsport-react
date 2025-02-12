@@ -12,7 +12,7 @@ export default async function Page({
     "landing_page",
     "it",
     "/" + slug,
-    ["dynamic", "sticky"],
+    ["dynamic", "dynamic.info.modal", "sticky", "sticky.info.modal"],
     [""]
     // jsonRtePaths
   );
