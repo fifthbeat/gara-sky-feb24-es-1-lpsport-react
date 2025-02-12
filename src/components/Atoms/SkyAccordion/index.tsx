@@ -1,5 +1,7 @@
-import Accordion from 'react-bootstrap/Accordion';
+"use client"
+
 import {CSSProperties, ReactNode} from "react";
+import { Accordion } from "react-bootstrap";
 
 interface SkyAccordionProps {
   key?: string;
