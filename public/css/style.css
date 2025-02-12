@@ -11,6 +11,15 @@ h1, .h1 {
 	font-family: SkyMedium;
 }
 
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+		color: #4d4d4d;
+	}
+}
+
 .gradient-primary {
 	background-clip: text;
 	background-color: rgb(245, 100, 0);
@@ -142,4 +151,140 @@ h1, .h1 {
 	-ms-transform:rotate(-20deg);
 	-o-transform:rotate(-20deg);
 	transform:rotate(-20deg);
+}
+
+/* FOOTER */
+footer .footer-menu, footer .footer-legal{
+	padding: 0 24px;
+	background-color: #fff;
+	border-top: 1px solid #e5e5e5;
+}
+
+footer .footer-menu {
+	background-color: #fafafa;
+	display: flex;
+	max-width: 1440px;
+	padding: 40px 4.9%;
+	margin: 0 auto;
+	flex-wrap: wrap;
+
+	.sfwc-column {
+		flex: 1 1 16.4%;
+		flex-basis: 16.4%;
+	}
+
+	.sfwc-title {
+		color: #4d4d4d;
+		font-size: 18px;
+		font-family: SkyMedium;
+		font-weight: 500;
+		letter-spacing: .5px;
+		line-height: 22px;
+		pointer-events: none;
+		outline-style: none;
+		text-align: unset;
+		padding: 18.62px 0;
+	}
+	ul li{
+
+		line-height: 15px;
+		margin-bottom: 24px;
+
+		a {
+			color: #4d4d4d;
+			font-size: 18px;
+			font-family: SkyRegular;
+			font-weight: 100;
+			letter-spacing: 0;
+			line-height: 24px;
+		}
+	}
+}
+
+footer .footer-legal {
+	display: flex;
+	flex-direction: column;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 40px 4.9%;
+
+	.sfwc-legal-section {
+		min-height: 64px;
+		margin: 5px 0;
+		display: -webkit-flex;
+		display: flex
+	;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-flex-direction: row;
+		flex-direction: row;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+	}
+
+	.credits {
+		min-height: 64px;
+		margin: 5px 0;
+		display: -webkit-flex;
+		display: flex;
+		flex-wrap: wrap;
+		-webkit-flex-direction: row;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.sky-logo-container {
+			width: 100%;
+			max-width: 55px;
+			height: auto;
+			float: left;
+			margin-right: 32px;
+		}
+
+		.sky-logo {
+			width: 100%;
+			height: auto;
+		}
+
+		.copyright-sky {
+			color: #4d4d4d;
+			font-family: SkyRegular;
+			font-weight: 100;
+			letter-spacing: 0;
+			line-height: 20px;
+			white-space: nowrap;
+			font-size: 16px;
+		}
+
+		.tutti-i-marchi-sky {
+			font-size: 12px;
+			padding-top: 5px;
+			color: #4d4d4d;
+			font-family: SkyRegular;
+			font-weight: 100;
+			letter-spacing: 0;
+			line-height: 20px;
+			white-space: nowrap;
+		}
+	}
+	nav {
+		margin: 0 0 0 auto;
+		display: inline-flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+		a {
+			display: flex;
+			align-items: center;
+			font-size: 16px;
+			font-family: SkyRegular;
+			font-weight: 100;
+			line-height: 20px;
+			margin: 0 32px 0 0;
+		}
+	}
+}
+
+.footer-spectrumLine {
+	height: 4px;
+	background: linear-gradient(90deg, #ff9e00, red 30.93%, #b5007d 61.67%, #21429c 88.09%, #0071ff);
 }
