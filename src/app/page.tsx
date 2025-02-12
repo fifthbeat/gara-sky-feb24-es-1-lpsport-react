@@ -5,6 +5,7 @@ import Heading from "@/components/Atoms/Heading";
 import SkyAccordion from "@/components/Atoms/SkyAccordion";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
@@ -31,7 +32,9 @@ export default function Home() {
           flexDirection: 'column',
           alignItems: 'center'
         }}>
-          <Heading as="h1" withGradient variant="display">Price</Heading>
+          <Hero
+            title={"Sky TV + Sky Sport"}
+            text={"Continua a vedere tutto lo sport di Sky al miglior prezzo e senza dover cambiare decoder."} price={"23.90"}/>
           <div style={{
             margin: "5rem",
             backgroundColor: "white",
