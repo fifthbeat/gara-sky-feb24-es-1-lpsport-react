@@ -6,24 +6,13 @@ import SkyAccordion from "@/components/Atoms/SkyAccordion";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import DiscountBanner from "@/components/DiscountBanner";
 
 export default function Home() {
   return (
       <>
         <Header />
-        {/*<div style={{*/}
-        {/*  margin: "5rem",*/}
-        {/*  backgroundColor: "white",*/}
-        {/*  padding: "1rem",*/}
-        {/*  display: 'flex',*/}
-        {/*  flexDirection: 'column',*/}
-        {/*  alignItems: 'center'*/}
-        {/*}}>*/}
-        {/*  <SkyAccordion*/}
-        {/*      header="Titolo"*/}
-        {/*      body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, varius nunc. Nulla facilisi. Nullam sit amet nisi sit amet nunc tincidunt aliquam. Nulla facilisi. Nullam sit amet nisi sit amet nunc tincidunt aliquam."*/}
-        {/*  />*/}
-        {/*</div>*/}
+
         <div style={{
           margin: "5rem",
           backgroundColor: "white",
@@ -61,6 +50,22 @@ export default function Home() {
                 withGradient
             />
           </div>
+        </div>
+
+        <DiscountBanner />
+
+        <div style={{
+          margin: "5rem",
+          backgroundColor: "white",
+          padding: "1rem",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}>
+          <SkyAccordion
+              header={<Heading as="h4" variant="section-title">Titolo</Heading>}
+              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, varius nunc. Nulla facilisi. Nullam sit amet nisi sit amet nunc tincidunt aliquam. Nulla facilisi. Nullam sit amet nisi sit amet nunc tincidunt aliquam."
+          />
         </div>
 
         <div style={{
