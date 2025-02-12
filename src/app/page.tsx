@@ -4,10 +4,12 @@ import Price from "@/components/Atoms/Price";
 import Heading from "@/components/Atoms/Heading";
 import SkyAccordion from "@/components/Atoms/SkyAccordion";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
       <>
+        <Header />
         {/*<div style={{*/}
         {/*  margin: "5rem",*/}
         {/*  backgroundColor: "white",*/}
