@@ -32,6 +32,14 @@ const mapComponents = (componentName: string, content: any) => {
     case "heading_editorial":
       return <Heading withGradient={content?.group.title.style[0].color === "brand"}
                       as={content?.group.title.style[0].tag} variant="display">{content?.group.title.title}</Heading>
+    case "accordion_group":
+      return content.list.map((accordion: any, index: number) => {
+        return <SkyAccordion
+          key={"accordion_" + index}
+          header={<h4>{accordion.item.title}</h4>}
+          body={HTMLReactParser(accordion.item.description)} />
+        })
+
     default:
       return <></>
   }
