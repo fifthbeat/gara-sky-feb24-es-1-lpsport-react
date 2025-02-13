@@ -62,7 +62,7 @@ export default function ReactMain({pageData} : ReactMainProps) {
                 {mapComponents(content._content_type_uid, content)}
               </Fragment>)
           })}
-        <Sticky />
+        <Sticky content={pageData.sticky}/>
         <Footer />
       </>
   );

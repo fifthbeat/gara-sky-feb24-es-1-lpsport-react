@@ -195,6 +195,12 @@ a {
 .sticky-bar-content {
 	.sticky-left {
 		text-align: left;
+
+		.sticky-title, .sticky-price {
+			font-family: SkyMedium;
+			font-size: 28px;
+			display: inline-block;
+		}
 	}
 	.sticky-right {
 		display: flex;

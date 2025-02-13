@@ -6,7 +6,9 @@ import {InfoCircle} from "@/components/assets/InfoCircle";
 import Button from "@/components/Atoms/Button";
 import {redirect} from "next/navigation";
 
-const Sticky = () => {
+const Sticky = (
+    {content: any }
+) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -28,20 +30,23 @@ const Sticky = () => {
         <Container className="py-3 sticky-bar-content">
           <Row>
             <Col className="sticky-left">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deleniti et officia reiciendis repellendus. Ad dolorem fugit sunt. Ab aspernatur corporis dignissimos dolore earum eum fugiat magnam magni minus porro.</p>
+              <p className="sticky-title gradient-primary">Sky TV + Sky Sport</p>
+              <p><span className="sticky-price gradient-primary">22,80 €</span> al mese per 18 mesi
+                <InfoCircle variant={"primary"}/>
+              </p>
             </Col>
             <Col className="sticky-right">
               <Button
                   as="button"
                   variant={"btn btn-secondary"}
               >
-                click
+                Ti chiamiamo noi
               </Button>
               <Button
                   as="button"
                   variant={"btn btn-primary"}
               >
-                click
+                Completa l'acquisto
               </Button>
             </Col>
           </Row>
