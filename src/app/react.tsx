@@ -53,7 +53,7 @@ const mapComponents = (componentName: string, content: any) => {
       return <Container>
         <Row>
             {content?.list.map((item: any, index: number) => {
-              return <Col>
+              return <Col key={"card_offer_" + index}>
                 <Card
                   imageSrc={item?.card_offer.image.file.url}
                   imageAlt={item?.card_offer.image.alt}
@@ -81,7 +81,7 @@ export default function ReactMain({pageData} : ReactMainProps) {
                 {mapComponents(content._content_type_uid, content)}
               </Fragment>)
           })}
-        <Sticky content={pageData.sticky}/>
+        <Sticky content={pageData.sticky[0]}/>
         <Footer />
       </>
   );

@@ -200,6 +200,7 @@ a {
 			font-family: SkyMedium;
 			font-size: 28px;
 			display: inline-block;
+			cursor: pointer;
 		}
 	}
 	.sticky-right {
