@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
+  images: {
+    domains: ["picsum.photos"],
+  },
   env: {
     // available at build time
     CONTENTSTACK_API_KEY: process.env.CONTENTSTACK_API_KEY,

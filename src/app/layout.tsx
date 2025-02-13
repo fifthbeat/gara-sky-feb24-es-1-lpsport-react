@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "../../public/css/style.css"
+import 'swiper/css';
 
 
 const geistSans = Geist({

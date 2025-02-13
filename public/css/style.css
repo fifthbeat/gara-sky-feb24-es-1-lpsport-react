@@ -399,3 +399,79 @@ footer .footer-legal {
 	color: #000FF5;
 }
 
+/* SKY CARD */
+.sky-card {
+	min-height: 300px;
+	border: 1px solid #E6E6E6;
+	border-radius: 5px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.card-body {
+		min-height: 180px;
+		padding: 1rem;
+		background: #FAFAFA;
+
+		.card-title {
+			font-size: calc(0.496078rem + 1.56863vw);
+			font-weight: bold;
+			margin-bottom: 1rem;
+			color: #333333;
+			line-height: 1.1;
+		}
+
+	}
+}
+
+/* CAROUSEL */
+.carousel-container {
+
+	.carousel-title {
+		display: block;
+		margin-bottom: 3rem;
+		text-align: center;
+	}
+
+	.container, .sky-swiper {
+		overflow: visible;
+	}
+}
+
+.swiper-button-prev{
+	transform: translateX(-50px);
+	&:after {
+		transform: translateX(-10%);
+	}
+}
+.swiper-button-next {
+	transform: translateX(50px);
+	&:after {
+		transform: translateX(10%);
+	}
+}
+.swiper-button-prev, .swiper-button-next {
+	background: white;
+	border-radius: 50%;
+	width: 50px !important;
+	height: 50px !important;
+	padding: 1rem;
+	box-sizing: border-box;
+	transition: opacity 200ms ease-in-out;
+	box-shadow: rgba(0,0,0,.3) 0px 0px 10px;
+
+	&:after {
+		font-size: 20px !important;
+	}
+}
+.swiper-button-disabled {
+	opacity: 0 !important;
+}

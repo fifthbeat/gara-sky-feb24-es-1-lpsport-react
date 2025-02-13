@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import {Fragment} from "react";
+import Carousel from "@/components/Carousel";
 
 interface ReactMainProps {
   pageData: any;
@@ -84,6 +85,8 @@ export default function ReactMain({pageData} : ReactMainProps) {
             />
           </div>
         </div>
+
+        <Carousel />
 
         <div style={{
           margin: "5rem",
