@@ -1,8 +1,5 @@
-import {CSSProperties, ReactNode} from "react";
-import Heading from "@/components/Atoms/Heading";
-import Text from "@/components/Atoms/Text";
 import Price from "@/components/Atoms/Price";
-import HTMLReactParser from "html-react-parser/lib/index";
+import {Col, Container, Row} from "react-bootstrap";
 
 interface DiscountBannerProps {
   fromPriceValue: string;
@@ -13,7 +10,7 @@ interface DiscountBannerProps {
   toPriceNote: any;
 }
 
-const  Arrow = () => {
+const Arrow = () => {
   return (
       <div className="arrow">
         <svg width="144" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -24,31 +21,35 @@ const  Arrow = () => {
   )
 }
 
-const DiscountBanner = ({fromPriceValue, fromPricePeriod, fromPriceNote,
-                          toPriceValue, toPricePeriod, toPriceNote}: DiscountBannerProps) => {
+const DiscountBanner = ({
+                          fromPriceValue, fromPricePeriod, fromPriceNote,
+                          toPriceValue, toPricePeriod, toPriceNote
+                        }: DiscountBannerProps) => {
   return (
-      <div className="discount-banner-container">
-        <div className="discount-banner" >
-          <Price
-              price={fromPriceValue}
-              priceCurrency={"€"}
-              pricePeriod={fromPricePeriod}
-              priceNote={fromPriceNote}
-              variant="primary"
-              isStrikethrough
-          />
-          <Arrow/>
-          <Price
-              price={toPriceValue}
-              priceCurrency={"€"}
-              pricePeriod={toPricePeriod}
-              priceNote={toPriceNote}
-              variant="primary"
-              withGradient
-          />
-        </div>
+      <Container className={"mt-5"}>
+        <Row className="justify-content-md-center discount-banner-container">
+          <Col md={8} className="discount-banner">
+                <Price
+                    price={fromPriceValue}
+                    priceCurrency={"€"}
+                    pricePeriod={fromPricePeriod}
+                    priceNote={fromPriceNote}
+                    variant="primary"
+                    isStrikethrough
+                />
+                <Arrow/>
+                <Price
+                    price={toPriceValue}
+                    priceCurrency={"€"}
+                    pricePeriod={toPricePeriod}
+                    priceNote={toPriceNote}
+                    variant="primary"
+                    withGradient
+                />
+          </Col>
+        </Row>
+      </Container>
 
-      </div>
   )
 };
 

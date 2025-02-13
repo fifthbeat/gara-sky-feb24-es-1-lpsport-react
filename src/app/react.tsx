@@ -13,6 +13,7 @@ import Carousel from "@/components/Carousel";
 import DiscountBanner from "@/components/DiscountBanner";
 import HTMLReactParser from "html-react-parser";
 import BannerSeparator from "@/components/BannerSeparator";
+import Sticky from "@/components/Sticky";
 
 interface ReactMainProps {
   pageData: any;
@@ -61,6 +62,7 @@ export default function ReactMain({pageData} : ReactMainProps) {
                 {mapComponents(content._content_type_uid, content)}
               </Fragment>)
           })}
+        <Sticky />
         <Footer />
       </>
   );
