@@ -37,16 +37,25 @@ a {
 	}
 }
 
-
-
 .gradient-primary {
 	background-clip: text;
 	background-color: rgb(245, 100, 0);
 	background-image: linear-gradient(to right, rgb(245, 100, 0) 0%, rgb(255, 0, 0) 25%, rgb(181, 0, 125) 50%, rgb(33, 66, 156) 75%, rgb(0, 113, 255) 100%);
 	-webkit-text-fill-color: transparent;
 }
-/* BUTTONS */
 
+.heading-editorial {
+	text-align: center;
+
+	.brand {
+		margin-top: 60px;
+	}
+	.dark {
+		margin-bottom: 60px;
+	}
+}
+
+/* BUTTONS */
 .btn {
 	align-items: center;
 	border: 2px solid transparent;
@@ -128,7 +137,7 @@ a {
 	flex-direction: column;
 	-webkit-box-pack: center;
 	justify-content: center;
-	white-space: nowrap;
+	max-width: 80px;
 }
 .currency-right {
 	font-size: 2.25rem;
@@ -138,6 +147,8 @@ a {
 	margin: 0px 0px 0px 0.5rem;
 	background-image: none;
 	background-color: transparent;
+	text-align: left;
+
 }
 .price-old {
 	color: #4d4d4d;
@@ -177,9 +188,12 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 3rem;
+	/*gap: 3rem;*/
 	border: 1px solid #E6E6E6;
 	border-radius: 5px;
+}
+.arrow {
+	transform: translateX(10px);
 }
 
 /* ACCORDION */
@@ -196,6 +210,33 @@ a {
 		box-sizing: border-box;
 		border-radius: 4px;
 		background: rgb(255, 255, 255);
+
+		button {
+			position: relative;
+
+			&:after {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				content: "prev";
+				font-family: swiper-icons;
+				top: 50%;
+				transform: translateY(-50%) rotate(90deg);
+				right: 20px;
+				transition: transform 0.3s ease-in-out;
+				transform-origin: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 20px;
+				text-align: center;
+				color: #000FF5;
+			}
+
+			&.collapsed:after {
+				transform: translateY(-50%) rotate(-90deg);
+			}
+		}
 
 		h4 {
 			text-align: left;
@@ -257,6 +298,9 @@ header {
 }
 
 /* FOOTER */
+footer {
+	margin-top: 60px;
+}
 footer .footer-menu, footer .footer-legal{
 	padding: 0 24px;
 	background-color: #fff;
@@ -390,10 +434,15 @@ footer .footer-legal {
 }
 
 /* HERO */
+.hero-container {
+	margin-top: 60px;
+}
 .hero {
+	min-height: 70vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	gap: 2rem;
 }
 
@@ -463,6 +512,7 @@ footer .footer-legal {
 
 /* CAROUSEL */
 .carousel-container {
+	padding-top: 60px;
 
 	.carousel-title {
 		display: block;
@@ -474,7 +524,6 @@ footer .footer-legal {
 		overflow: visible;
 	}
 }
-
 .swiper-button-prev{
 	transform: translateX(-50px);
 	&:after {
@@ -499,12 +548,14 @@ footer .footer-legal {
 
 	&:after {
 		font-size: 20px !important;
+		color: #000FF5;
 	}
 }
 .swiper-button-disabled {
 	opacity: 0 !important;
 }
 
+/* BANNER SEPARATOR */
 .banner-separator {
 	margin-top: 60px;
 	margin-bottom: 60px;

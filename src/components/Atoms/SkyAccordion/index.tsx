@@ -1,7 +1,7 @@
 "use client"
 
 import {CSSProperties, ReactNode} from "react";
-import { Accordion } from "react-bootstrap";
+import {Accordion, Col, Container, Row} from "react-bootstrap";
 
 interface SkyAccordionProps {
   eventKey?: string;
@@ -12,14 +12,20 @@ interface SkyAccordionProps {
 
 export const SkyAccordion = ({eventKey = "0", header, body, style}: SkyAccordionProps) => {
   return (
-    <Accordion className="sky-accordion" style={style}>
-      <Accordion.Item eventKey={eventKey}>
-        <Accordion.Header className="sky-accordion-header">{header}</Accordion.Header>
-        <Accordion.Body className="sky-accordion-body">
-          {body}
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
+    <Container>
+      <Row className="justify-content-md-center">
+        <Col xs={12} md={8}>
+          <Accordion className="sky-accordion" style={style}>
+            <Accordion.Item eventKey={eventKey}>
+              <Accordion.Header className="sky-accordion-header">{header}</Accordion.Header>
+              <Accordion.Body className="sky-accordion-body">
+                {body}
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </Col>
+      </Row>
+    </Container>
   )
 };
 
