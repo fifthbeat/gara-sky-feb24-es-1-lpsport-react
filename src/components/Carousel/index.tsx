@@ -21,7 +21,18 @@ const Carousel = ({cardList}: CarouselProps) => {
           <Row>
             <Col>
               <Swiper
-                  slidesPerView={4}
+                  slidesPerView={1}
+                  breakpoints={{
+                    640: {
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                    },
+                    1024: {
+                      slidesPerView: 4,
+                    },
+                  }}
                   spaceBetween={30}
                   navigation={true}
                   keyboard={true}

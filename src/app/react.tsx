@@ -16,6 +16,7 @@ import BannerSeparator from "@/components/BannerSeparator";
 import Card from "@/components/Card";
 import {Col, Container, Row} from "react-bootstrap";
 import Sticky from "@/components/Sticky";
+import Head from "next/head";
 
 interface ReactMainProps {
   pageData: any;
@@ -74,6 +75,9 @@ const mapComponents = (componentName: string, content: any) => {
 export default function ReactMain({pageData} : ReactMainProps) {
   return (
       <>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <Header />
           {pageData && pageData.dynamic && pageData.dynamic.map((content: any, index: number) => {
             return (

@@ -34,7 +34,7 @@ const Sticky = (
         <SkyOffersModal title={content?.info.modal[0].title_modal} body={HTMLReactParser(content?.info.modal[0].content)} setShow={setShow} show={show}/>
         <Container className="py-3 sticky-bar-content">
           <Row>
-            <Col className="sticky-left" >
+            <Col className="sticky-left" xs={12} md={6}>
               <p onClick={() => setShow(true)} className={`sticky-title ${content?.title_label.style[0].color === "brand" ? "gradient-primary" : ""}`}>
                 {content?.title_label.title}
               </p>
@@ -44,7 +44,7 @@ const Sticky = (
                 <InfoCircle variant={"primary"} style={{cursor: "pointer"}} />
               </p>
             </Col>
-            <Col className="sticky-right">
+            <Col className="sticky-right" xs={12} md={6}>
               {
                 content?.ctas.map((cta: any, index: number) => (
                   <Button
