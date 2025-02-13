@@ -42,7 +42,10 @@ const mapComponents = (componentName: string, content: any) => {
             header={<h4>{accordion.item.title}</h4>}
             body={HTMLReactParser(accordion.item.description)}/>
         })}</div>
-
+    case "carousel":
+      return <Carousel cardList={content?.list}/>
+    case "separator":
+      return <BannerSeparator imageDesktop={content?.image_desktop.url} imageMobile={content?.image_mobile.url}/>
     default:
       return <></>
   }

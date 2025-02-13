@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import { Navigation, Mousewheel, Keyboard  } from 'swiper/modules';
 import Heading from "@/components/Atoms/Heading";
 import {Container, Row, Col} from "react-bootstrap";
+import HTMLReactParser from "html-react-parser";
 
 const slides = [
   'UEFA Champions League',
@@ -24,20 +25,15 @@ const slides = [
 ];
 
 type CarouselProps = {
+  cardList: any;
 };
 
-const Carousel = ({}: CarouselProps) => {
+const Carousel = ({cardList}: CarouselProps) => {
   return (
       <div className="carousel-container">
         <Container>
           <Row>
             <Col>
-              <Heading
-                  as="h2"
-                  variant="display"
-                  withGradient
-                  className={"carousel-title"}
-              >Un mondo di sport ti aspetta</Heading>
               <Swiper
                   slidesPerView={4}
                   spaceBetween={30}
@@ -47,11 +43,13 @@ const Carousel = ({}: CarouselProps) => {
                   className="sky-swiper"
               >
                 {
-                  slides.map((slide, index) => (
-                      <SwiperSlide key={index}>
+                  cardList.map((item: any, index: number) => (
+                      <SwiperSlide key={"swipe_" + index}>
                         <Card
-                            title={slide}
-                        >{slide}</Card>
+                            title={item?.card?.title}
+                            imageAlt={item?.card?.image.alt}
+                            imageSrc={item?.card?.image?.file.url}
+                        >{HTMLReactParser(item?.card?.description)}</Card>
                       </SwiperSlide>
                   ))
                 }

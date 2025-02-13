@@ -5,26 +5,30 @@ import Heading from "@/components/Atoms/Heading";
 
 type CardProps = {
   title: string;
-  children: React.ReactNode;
+  imageSrc: string;
+  imageAlt: string;
+  children: any;
 };
 
 const Card = (
     {
       title,
+      imageSrc,
+      imageAlt,
       children,
     }: CardProps) => {
   return (
       <div className={cn("sky-card")}>
         <Image
             // src="/logo-sky.png"
-            src="https://picsum.photos/600/350"
+            src={imageSrc}
             width={600}
             height={350}
-            alt=""
+            alt={imageAlt}
             className="hwc-sky-logo-wrapper"
         />
         <div className="card-body">
-          <Heading as={"h3"} variant="section-title" className="card-title">{title}</Heading>
+          <Heading as={"h3"} className="card-title">{title}</Heading>
           {children}
         </div>
       </div>
