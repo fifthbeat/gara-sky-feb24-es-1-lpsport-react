@@ -12,6 +12,7 @@ import {Fragment} from "react";
 import Carousel from "@/components/Carousel";
 import DiscountBanner from "@/components/DiscountBanner";
 import HTMLReactParser from "html-react-parser";
+import BannerSeparator from "@/components/BannerSeparator";
 
 interface ReactMainProps {
   pageData: any;
@@ -107,6 +108,8 @@ export default function ReactMain({pageData} : ReactMainProps) {
             />
           </div>
         </div>
+
+        <BannerSeparator />
 
         <Carousel />
 
