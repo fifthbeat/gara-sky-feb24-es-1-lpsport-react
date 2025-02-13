@@ -237,12 +237,27 @@ a {
 			display: inline-block;
 			cursor: pointer;
 		}
+
+		@media screen and (max-width: 768px) {
+			text-align: center;
+		}
 	}
 
 	.sticky-right {
 		display: flex;
 		justify-content: flex-end;
 		gap: 1rem;
+
+		@media screen and (max-width: 768px) {
+			margin-top: 30px;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+
+			.btn {
+				width: 100%;
+			}
+		}
 	}
 }
 
