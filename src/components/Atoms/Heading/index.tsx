@@ -3,16 +3,12 @@ import "./style.css";
 
 type Props = {
   as: "h1" | "h2" | "h3" | "h4" | "h5";
-  children: string;
-  withGradient?: boolean;
-  className?: string;
-  variant: "large-display" | "display" | "page-title" | "section-title" | "hero-text";
+  children: any;
+  variant: "brand" | "dark";
 };
 
-const Heading = ({ children, as: Component, className, variant, withGradient = false }: Props) => {
-  const classes = cn("heading", variant, withGradient ? "heading__gradient" : " ", className);
-  // return <Component className={cn("heading", variant, withGradient ? "heading__gradient" : "")}>{children}</Component>;
-  return <Component className={classes}>{children}</Component>;
+const Heading = ({ children, as: Component, variant }: Props) => {
+  return <Component className={cn("heading", variant)}>{children}</Component>;
 };
 
 export default Heading;

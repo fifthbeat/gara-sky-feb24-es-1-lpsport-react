@@ -4,27 +4,33 @@ import Heading from "@/components/Atoms/Heading";
 import { redirect } from 'next/navigation'
 import HTMLReactParser from "html-react-parser";
 
+import React from "react";
+import {InfoCircle} from "@/components/assets/InfoCircle";
+
 const Hero = ({content}: any) => {
   if (!content)
     return <></>
   return (
     <div className={"hero"}>
-      <Heading as="h1" withGradient variant="display">{content?.group[0].title.title}</Heading>
-      <Heading as="h3" variant="hero-text">{content?.group[0].description.content}</Heading>
-      <Price
-        price={content?.price.value.toLocaleString("it-IT", { minimumFractionDigits: 2 })}
-        priceCurrency={"€"}
-        pricePeriod={content?.price.label}
-        priceNote={HTMLReactParser(content?.price.info)}
-        variant="primary"
-        style={{marginTop: "2.5rem"}}
-        withGradient
-      />
-      <Button
-        style={{marginTop: "0.2rem"}}
-        as="link"
-        variant="link-primary"
-      >Dettagli offerta</Button>
+      <Heading as="h1" variant="brand">{content?.group[0].title.title}</Heading>
+      <Heading as="h4" variant="dark">{HTMLReactParser(content?.group[0].description[0].content)}</Heading>
+      <div className={"hero-price"}>
+        <Price
+          price={content?.price.value.toLocaleString("it-IT", {minimumFractionDigits: 2})}
+          priceCurrency={"€"}
+          pricePeriod={content?.price.label}
+          priceNote={HTMLReactParser(content?.price.info)}
+          variant="primary"
+          withGradient
+        />
+        <Button
+          as="link"
+          variant="link-primary"
+        ><div className={"hero-offer-detail link-primary"}>
+          {content?.info.label}
+          <InfoCircle variant={"primary"}/>
+        </div></Button>
+      </div>
       <div className={"hero-buttons"}>
         {
           content?.ctas.map((cta: any, index: number) => (

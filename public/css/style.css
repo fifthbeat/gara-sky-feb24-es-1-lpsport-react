@@ -11,11 +11,23 @@ body {
 	text-align: center;
 }
 h1, .h1 {
-	font-size: 32px;
-	font-weight: bold;
-	line-height: 40px;
+	font-size: 64px;
+	line-height: 62px;
 	font-family: SkyMedium;
 }
+
+h2, .h2 {
+	font-size: 32px;
+	font-weight: 400;
+	font-family: SkyRegular;
+}
+
+h4, .h4 {
+	font-size: 32px;
+	font-weight: 400;
+	font-family: SkyRegular;
+}
+
 a {
 	text-decoration: none;
 
@@ -382,7 +394,21 @@ footer .footer-legal {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 2rem;
 }
+
+.hero-price {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero-offer-detail {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
 .hero-text {
 	font-size: 26px;
 	line-height: 16px;

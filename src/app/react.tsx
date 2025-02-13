@@ -32,15 +32,16 @@ const mapComponents = (componentName: string, content: any) => {
         toPriceNote={HTMLReactParser(content?.compare.to.info)}
       />;
     case "heading_editorial":
-      return <Heading withGradient={content?.group.title.style[0].color === "brand"}
-                      as={content?.group.title.style[0].tag} variant="display">{content?.group.title.title}</Heading>
+      return <Heading variant={content?.group.title.style[0].color}
+                      as={content?.group.title.style[0].tag}>{content?.group.title.title}</Heading>
     case "accordion_group":
-      return content.list.map((accordion: any, index: number) => {
-        return <SkyAccordion
-          key={"accordion_" + index}
-          header={<h4>{accordion.item.title}</h4>}
-          body={HTMLReactParser(accordion.item.description)} />
-        })
+      return <div>
+        {content.list.map((accordion: any, index: number) => {
+          return <SkyAccordion
+            key={"accordion_" + index}
+            header={<h4>{accordion.item.title}</h4>}
+            body={HTMLReactParser(accordion.item.description)}/>
+        })}</div>
 
     default:
       return <></>
@@ -70,7 +71,8 @@ export default function ReactMain({pageData} : ReactMainProps) {
           padding: "1rem",
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center'
+          alignItems: 'center',
+          gap: '1.5rem'
         }}>
           {pageData && pageData.dynamic && pageData.dynamic.map((content: any, index: number) => {
             return (
@@ -78,73 +80,6 @@ export default function ReactMain({pageData} : ReactMainProps) {
                 {mapComponents(content._content_type_uid, content)}
               </Fragment>)
           })}
-          {/*<Hero*/}
-          {/*  title={"Sky TV + Sky Sport"}*/}
-          {/*  text={"Continua a vedere tutto lo sport di Sky al miglior prezzo e senza dover cambiare decoder."} price={"23.90"}/>*/}
-          <div style={{
-            margin: "5rem",
-            backgroundColor: "white",
-            padding: "1rem",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: "3rem"
-          }}>
-            <Price
-                price="24,90"
-                priceCurrency={"€"}
-                pricePeriod="/mese"
-                priceNote="IVA esclusa"
-                variant="primary"
-                isStrikethrough
-            />
-            <Price
-                price="24,90"
-                priceCurrency={"€"}
-                pricePeriod="/mese"
-                priceNote="IVA esclusa"
-                variant="primary"
-                withGradient
-            />
-          </div>
-        </div>
-
-        <BannerSeparator />
-
-        <Carousel />
-
-        <div style={{
-          margin: "5rem",
-          backgroundColor: "white",
-          padding: "1rem",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "1rem"
-        }}>
-          <Heading as="h2" variant="display">Buttons</Heading>
-          <div style={{display: "flex", gap: "1rem"}}>
-            <Button
-                as="button"
-                variant="btn btn-primary"
-                disabled={false}
-            >Click me</Button>
-            <Button
-                as="button"
-                variant="btn btn-secondary"
-                disabled={false}
-            >Click me</Button>
-            <Button
-                as="button"
-                variant="btn btn-primary btn-disabled"
-                disabled={false}
-            >Click me</Button>
-            <Button
-                as="button"
-                variant="btn btn-secondary btn-disabled"
-                disabled={false}
-            >Click me</Button>
-          </div>
         </div>
         <Footer />
       </>

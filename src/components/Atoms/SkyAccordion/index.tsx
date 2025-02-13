@@ -4,16 +4,16 @@ import {CSSProperties, ReactNode} from "react";
 import { Accordion } from "react-bootstrap";
 
 interface SkyAccordionProps {
-  key?: string;
+  eventKey?: string;
   header: string | ReactNode;
   body: string | ReactNode;
   style?: CSSProperties;
 }
 
-export const SkyAccordion = ({key = "0", header, body, style}: SkyAccordionProps) => {
+export const SkyAccordion = ({eventKey = "0", header, body, style}: SkyAccordionProps) => {
   return (
     <Accordion className="sky-accordion" style={style}>
-      <Accordion.Item eventKey={key}>
+      <Accordion.Item eventKey={eventKey}>
         <Accordion.Header className="sky-accordion-header">{header}</Accordion.Header>
         <Accordion.Body className="sky-accordion-body">
           {body}
