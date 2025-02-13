@@ -2,6 +2,7 @@ import Price from "@/components/Atoms/Price";
 import Button from "@/components/Atoms/Button";
 import Heading from "@/components/Atoms/Heading";
 import { redirect } from 'next/navigation'
+import HTMLReactParser from "html-react-parser";
 
 const Hero = ({content}: any) => {
   if (!content)
@@ -11,10 +12,10 @@ const Hero = ({content}: any) => {
       <Heading as="h1" withGradient variant="display">{content?.group[0].title.title}</Heading>
       <Heading as="h3" variant="hero-text">{content?.group[0].description.content}</Heading>
       <Price
-        price={content?.price.value.toString()}
+        price={content?.price.value.toLocaleString("it-IT", { minimumFractionDigits: 2 })}
         priceCurrency={"€"}
         pricePeriod={content?.price.label}
-        priceNote={content?.price.info}
+        priceNote={HTMLReactParser(content?.price.info)}
         variant="primary"
         style={{marginTop: "2.5rem"}}
         withGradient

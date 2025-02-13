@@ -2,40 +2,37 @@ import {CSSProperties, ReactNode} from "react";
 import Heading from "@/components/Atoms/Heading";
 import Text from "@/components/Atoms/Text";
 import Price from "@/components/Atoms/Price";
+import HTMLReactParser from "html-react-parser/lib/index";
 
 interface DiscountBannerProps {
-  style?: CSSProperties;
+  fromPriceValue: string;
+  fromPricePeriod: string;
+  fromPriceNote: any;
+  toPriceValue: string;
+  toPricePeriod: string;
+  toPriceNote: any;
 }
 
-const DiscountBanner = ({style}: DiscountBannerProps) => {
-
+const DiscountBanner = ({fromPriceValue, fromPricePeriod, fromPriceNote,
+                          toPriceValue, toPricePeriod, toPriceNote}: DiscountBannerProps) => {
   return (
       <div className="discount-banner-container">
-        <Heading
-            as="h2"
-            variant="display"
-            withGradient
-        >Approfitta dell'offerta riservata a te e continua a guardare i contenuti Sky</Heading>
-        <Text variant="centered">Inizia a guardare subito, senza cambiare decoder.</Text>
-
         <div className="discount-banner" >
           <Price
-              price="24,90"
+              price={fromPriceValue}
               priceCurrency={"€"}
-              pricePeriod="/mese"
-              priceNote="IVA esclusa"
+              pricePeriod={fromPricePeriod}
+              priceNote={fromPriceNote}
               variant="primary"
               isStrikethrough
-              caption="Prezzo per i nuovi clienti"
           />
           <Price
-              price="24,90"
+              price={toPriceValue}
               priceCurrency={"€"}
-              pricePeriod="/mese"
-              priceNote="IVA esclusa"
+              pricePeriod={toPricePeriod}
+              priceNote={toPriceNote}
               variant="primary"
               withGradient
-              caption="Prezzo riservato a te"
           />
         </div>
 
