@@ -21,7 +21,7 @@ const Button = ({children, as = 'button', variant, disabled, onClick, href, styl
     )
   } else if (as === "link") {
     return (
-      <a href={href} className={variant} style={style}>
+      <a href={href} className={variant} style={style} onClick={onClick}>
         {children}
       </a>
     )

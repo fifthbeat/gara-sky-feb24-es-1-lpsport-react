@@ -13,6 +13,8 @@ import Carousel from "@/components/Carousel";
 import DiscountBanner from "@/components/DiscountBanner";
 import HTMLReactParser from "html-react-parser";
 import BannerSeparator from "@/components/BannerSeparator";
+import Card from "@/components/Card";
+import {Col, Container, Row} from "react-bootstrap";
 import Sticky from "@/components/Sticky";
 
 interface ReactMainProps {
@@ -47,6 +49,23 @@ const mapComponents = (componentName: string, content: any) => {
       return <Carousel cardList={content?.list}/>
     case "separator":
       return <BannerSeparator imageDesktop={content?.image_desktop.url} imageMobile={content?.image_mobile.url}/>
+    case "card_list":
+      return <Container>
+        <Row>
+            {content?.list.map((item: any, index: number) => {
+              return <Col>
+                <Card
+                  imageSrc={item?.card_offer.image.file.url}
+                  imageAlt={item?.card_offer.image.alt}
+                  title={item?.card_offer.title} titleVariant={"centered"}
+                  thumbImageSrc={item?.card_offer.thumb_image.file.url}
+                  thumbImageAlt={item?.card_offer.thumb_image.alt}>
+                <div className={"card-offer-description"}>{item?.card_offer.description}</div>
+              </Card>
+            </Col>
+            })}
+        </Row>
+      </Container>;
     default:
       return <></>
   }

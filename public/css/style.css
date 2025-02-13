@@ -526,7 +526,7 @@ footer .footer-legal {
 	min-height: 300px;
 	border: 1px solid #E6E6E6;
 	border-radius: 5px;
-	background-color: #fff;
+	background-color: #FAFAFA;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -624,4 +624,21 @@ footer .footer-legal {
 		}
 
 	}
+}
+
+.card-offer-description {
+	text-align: center;
+}
+
+.card-offer-title-centered {
+	text-align: center;
+}
+
+.card-thumb-image {
+	position: relative;
+	top: 100%;
+	left: 50%;
+	width: 70px;
+	height: 70px;
+	transform: translate(-47%, -60%);
 }

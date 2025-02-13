@@ -4,15 +4,19 @@ import Heading from "@/components/Atoms/Heading";
 import { redirect } from 'next/navigation'
 import HTMLReactParser from "html-react-parser";
 
-import React from "react";
+import React, { useState } from "react";
 import {InfoCircle} from "@/components/assets/InfoCircle";
 import {Col, Container, Row} from "react-bootstrap";
+import SkyOffersModal from "@/components/SkyOffersModal";
 
 const Hero = ({content}: any) => {
+  const [show, setShow] = useState(false);
+
   if (!content)
     return <></>
   return (
       <Container className="hero-container">
+        <SkyOffersModal title={content?.info.modal[0].title_modal} body={HTMLReactParser(content?.info.modal[0].content)} setShow={setShow} show={show}/>
         <Row className="centered">
           <Col className="hero">
             <Heading as="h1" variant="brand">{content?.group[0].title.title}</Heading>
@@ -29,6 +33,7 @@ const Hero = ({content}: any) => {
               <Button
                   as="link"
                   variant="link-primary"
+                  onClick={() => setShow(true)}
               ><div className={"hero-offer-detail link-primary"}>
                 {content?.info.label}
                 <InfoCircle variant={"primary"}/>
