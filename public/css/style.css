@@ -221,6 +221,99 @@ a {
 
 
 
+/* MODALS */
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	z-index: 1050;
+}
+.modal-backdrop.show {
+	opacity: 1;
+}
+.modal {
+	position: fixed;
+	/*top: 50%;*/
+	/*left: 50%;*/
+	/*transform: translate(-50%, -50%);*/
+	/*width: auto;*/
+	/*max-width: 960px;*/
+	top: 5%;
+	bottom: 5%;
+	right: 7.5%;
+	left: 7.5%;
+	background: white;
+	border-radius: 4px;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+	z-index: 1055;
+	&:focus,
+	&:focus-visible {
+		outline: none;
+		box-shadow: none;
+	}
+}
+.modal.show {
+	opacity: 1;
+	/*transform: translate(-50%, -50%) scale(1);*/
+}
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+}
+.modal-body {
+	padding: 1.5rem;
+}
+.modal-footer {
+	display: flex;
+	justify-content: flex-end;
+	padding: 15px;
+	border-top: 1px solid #ddd;
+}
+.fade {
+	opacity: 0;
+	transition: opacity 0.15s linear;
+}
+.fade.show {
+	opacity: 1;
+}
+.modal .btn-close {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	border: 1px solid #E6E6E6;
+}
+
+.btn-close::before {
+	content: "✕"; /* Simbolo X */
+	font-size: 24px;
+	color: blue;
+	font-weight: bold;
+}
+
+.btn-close:hover {
+	box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
 /* DISCOUNT BANNER */
 .discount-banner-container {
 	display: flex;

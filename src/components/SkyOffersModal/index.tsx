@@ -1,4 +1,4 @@
-import {Modal} from "react-bootstrap";
+import {Col, Container, Modal, Row} from "react-bootstrap";
 import './style.css';
 
 interface SkyOffersModalProps {
@@ -19,7 +19,13 @@ const SkyOffersModal = ({show, setShow, title, body}: SkyOffersModalProps) => {
       <Modal.Title>{title}</Modal.Title>
     </Modal.Header>
     <Modal.Body className="sky-offers-modal-body">
-      {body}
+      <Container>
+        <Row className={"justify-content-center align-items-center"}>
+          <Col md={8}>
+            {body}
+          </Col>
+        </Row>
+      </Container>
     </Modal.Body>
   </Modal>
 };

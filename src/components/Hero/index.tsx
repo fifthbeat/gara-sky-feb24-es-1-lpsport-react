@@ -32,7 +32,7 @@ const Hero = ({content}: any) => {
               />
               <Button
                   as="link"
-                  variant="link-primary"
+                  variant="link-primary modal-link"
                   onClick={() => setShow(true)}
               ><div className={"hero-offer-detail link-primary"}>
                 {content?.info.label}
