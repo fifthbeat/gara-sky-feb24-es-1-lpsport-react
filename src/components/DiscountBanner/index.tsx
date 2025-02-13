@@ -14,7 +14,7 @@ const Arrow = () => {
   return (
       <div className="arrow">
         <svg width="144" height="40" xmlns="http://www.w3.org/2000/svg">
-          <line x1="8" y1="20" x2="104" y2="20" stroke="gray" stroke-width="2"/>
+          <line x1="8" y1="20" x2="104" y2="20" stroke="gray" strokeWidth="2"/>
           <polygon points="104,15 116,20 104,25" fill="gray"/>
         </svg>
       </div>
