@@ -26,7 +26,7 @@ const DiscountBanner = ({
                           toPriceValue, toPricePeriod, toPriceNote
                         }: DiscountBannerProps) => {
   return (
-      <Container className={"mt-5"}>
+      <Container className={"mt-3"}>
         <Row className="justify-content-md-center discount-banner-container">
           <Col md={8} className="discount-banner">
                 <Price
