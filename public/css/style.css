@@ -827,4 +827,10 @@ footer .footer-legal {
 	width: 70px;
 	height: 70px;
 	transform: translate(-47%, -60%);
+
+	@media screen and (max-width: 768px) {
+		width: 30px;
+		height: 30px;
+		transform: translate(-47%, -65%);
+	}
 }
