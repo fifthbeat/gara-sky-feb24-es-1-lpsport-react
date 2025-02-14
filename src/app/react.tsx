@@ -33,8 +33,18 @@ const mapComponents = (componentName: string, content: any) => {
         toPriceNote={HTMLReactParser(content?.compare.to.info)}
       />;
     case "heading_editorial":
-      return <div className="heading-editorial"><Heading variant={content?.group.title.style[0].color}
-                      as={content?.group.title.style[0].tag}>{content?.group.title.title}</Heading></div>
+      return <div className="heading-editorial">
+        <Heading variant={content?.group.title.style[0].color}
+                      as={content?.group.title.style[0].tag}>
+          {content?.group.title.title}
+        </Heading>
+        {content?.text.content &&
+        <Heading className={"heading-sub-text"} variant={content?.text.style[0].color}
+                 as={"h5"}>
+          {HTMLReactParser(content?.text.content)}
+        </Heading>
+        }
+      </div>
     case "accordion_group":
       return <div>
         {content.list.map((accordion: any, index: number) => {
@@ -51,7 +61,7 @@ const mapComponents = (componentName: string, content: any) => {
       return <Container>
         <Row>
             {content?.list.map((item: any, index: number) => {
-              return <Col key={"card_offer_" + index}>
+              return <Col key={"card_offer_" + index} className={"centered"} xs={12} sm={6}>
                 <Card
                   imageSrc={item?.card_offer.image.file.url}
                   imageAlt={item?.card_offer.image.alt}

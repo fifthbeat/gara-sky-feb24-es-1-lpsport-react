@@ -39,6 +39,12 @@ h4, .h4 {
 	font-family: SkyRegular;
 }
 
+h5, .h5 {
+	font-size: 28px;
+	font-weight: 400;
+	font-family: SkyRegular;
+}
+
 a {
 	text-decoration: none;
 
@@ -62,7 +68,13 @@ a {
 		margin-top: 40px;
 		margin-bottom: 40px;
 	}
+
+	.heading-sub-text {
+		margin-top: 0;
+	}
 }
+
+
 
 /* BUTTONS */
 .btn {
@@ -654,7 +666,7 @@ footer .footer-legal {
 }
 
 .hero {
-	min-height: 70vh;
+	min-height: 40vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -829,8 +841,20 @@ footer .footer-legal {
 	transform: translate(-47%, -60%);
 
 	@media screen and (max-width: 768px) {
-		width: 30px;
-		height: 30px;
-		transform: translate(-47%, -65%);
+		width: 45px;
+		height: 45px;
+		transform: translate(-47%, -60%);
 	}
+}
+
+.badge {
+	display: inline-block;
+	background-color: #fdeee9;
+	color: #b82605;
+	padding: 8px 16px;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 1.7rem;
 }

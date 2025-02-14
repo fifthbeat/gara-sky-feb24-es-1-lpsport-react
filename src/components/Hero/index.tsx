@@ -19,6 +19,7 @@ const Hero = ({content}: any) => {
         <SkyOffersModal title={content?.info.modal[0].title_modal} body={HTMLReactParser(content?.info.modal[0].content)} setShow={setShow} show={show}/>
         <Row className="centered">
           <Col className="hero">
+            <div className="badge">{content?.badge}</div>
             <Heading as="h1" variant="brand">{content?.group[0].title.title}</Heading>
             <Heading as="h4" variant="dark">{HTMLReactParser(content?.group[0].description[0].content)}</Heading>
             <div className={"hero-price"}>
