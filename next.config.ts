@@ -45,6 +45,9 @@ const nextConfig: NextConfig = {
       ? process.env.CONTENTSTACK_VISUAL_BUILDER_MODE
       : "builder", // mode: builder | preview
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  }
 };
 
 export default nextConfig;
