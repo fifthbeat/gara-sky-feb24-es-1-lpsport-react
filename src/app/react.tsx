@@ -1,8 +1,5 @@
 "use client"
 
-import Image from "next/image";
-import Button from "@/components/Atoms/Button";
-import Price from "@/components/Atoms/Price";
 import Heading from "@/components/Atoms/Heading";
 import SkyAccordion from "@/components/Atoms/SkyAccordion";
 import Footer from "@/components/Footer";

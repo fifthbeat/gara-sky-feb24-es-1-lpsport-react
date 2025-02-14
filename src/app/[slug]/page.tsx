@@ -1,4 +1,3 @@
-import Layout from "@/components/Layout";
 import { getEntryByUrl } from "@/services";
 import ReactMain from "@/app/react";
 
