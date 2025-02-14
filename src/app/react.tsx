@@ -22,7 +22,13 @@ interface ReactMainProps {
 const mapComponents = (componentName: string, content: any) => {
   switch (componentName) {
     case "hero":
-      return <Hero content={content}/>;
+      return <Hero badge={content?.badge} title={content?.group[0].title.title}
+                   description={HTMLReactParser(content?.group[0].description[0].content)}
+                   priceValue={content?.price.value} pricePeriod={content?.price.label}
+                   priceNote={HTMLReactParser(content?.price.info)} infoLabel={content?.info.label}
+                   ctaButtons={content?.ctas} modalTitle={content?.info.modal[0].title_modal}
+                   modalBody={HTMLReactParser(content?.info.modal[0].content)}
+      />;
     case "banner_discount":
       return <DiscountBanner
         fromPriceValue={content?.compare.from.value.toLocaleString("it-IT", { minimumFractionDigits: 2 })}
