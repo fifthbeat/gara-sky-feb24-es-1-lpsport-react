@@ -286,6 +286,7 @@ a {
 	padding: 3rem;
 	position: relative;
 }
+
 .modal-backdrop {
 	position: fixed;
 	top: 0;
@@ -304,11 +305,6 @@ a {
 
 .modal {
 	position: fixed;
-	/*top: 50%;*/
-	/*left: 50%;*/
-	/*transform: translate(-50%, -50%);*/
-	/*width: auto;*/
-	/*max-width: 960px;*/
 	top: 5%;
 	bottom: 5%;
 	right: 7.5%;
@@ -319,6 +315,14 @@ a {
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 	z-index: 1055;
+
+	@media screen and (max-width: 768px) {
+		top: 2%;
+		bottom: 2%;
+		right: 2%;
+		left: 2%;
+		padding: 1rem;
+	}
 
 	&:focus,
 	&:focus-visible {
@@ -388,6 +392,11 @@ a {
 	position: absolute;
 	top: 30px;
 	right: 30px;
+
+	@media screen and (max-width: 768px) {
+		top: 10px;
+		right: 10px;
+	}
 }
 
 .btn-close::before {
@@ -747,6 +756,7 @@ footer .footer-legal {
 	justify-content: space-between;
 	align-items: stretch;
 	overflow: hidden;
+	margin-bottom: 15px;
 
 	img {
 		width: 100%;
@@ -764,6 +774,10 @@ footer .footer-legal {
 			margin-bottom: 1rem;
 			color: #333333;
 			line-height: 1.1;
+
+			@media screen and (max-width: 768px) {
+				font-size: 1.5rem;
+			}
 		}
 
 	}
