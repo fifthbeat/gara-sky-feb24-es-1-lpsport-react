@@ -543,7 +543,11 @@ header {
 footer .footer-menu, footer .footer-legal {
 	padding: 0 24px;
 	background-color: #fff;
-	border-top: 1px solid #e5e5e5;
+}
+
+.footer-menu-container {
+	background-color: #fafafa;
+	width: 100%;
 }
 
 footer .footer-menu {
@@ -590,6 +594,10 @@ footer .footer-menu {
 			line-height: 24px;
 		}
 	}
+}
+
+.footer-legal-container {
+	border-top: 1px solid #e5e5e5;
 }
 
 footer .footer-legal {

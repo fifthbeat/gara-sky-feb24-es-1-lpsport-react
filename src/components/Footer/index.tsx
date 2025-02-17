@@ -156,31 +156,34 @@ export const Footer = () => {
   return (
       <>
         <footer>
-          <div className="footer-menu">
-            {
-              footerMenus.map((menu, index) => {
-                return (
-                    <div className="sfwc-column" key={index}>
-                      <div role="group">
-                        <h4 className="sfwc-title">{menu.title}</h4>
-                        <ul className="sfwc-column-collection" aria-label={menu.title}>
-                          {
-                            menu.items.map((item, index) => {
-                              return (
-                                  <li className="sfwc-column-voice" key={index}>
-                                    <a href={item.url}>{item.title}</a>
-                                  </li>
-                              )
-                            })
-                          }
-                        </ul>
+          <div className="footer-menu-container">
+            <div className="footer-menu">
+              {
+                footerMenus.map((menu, index) => {
+                  return (
+                      <div className="sfwc-column" key={index}>
+                        <div role="group">
+                          <h4 className="sfwc-title">{menu.title}</h4>
+                          <ul className="sfwc-column-collection" aria-label={menu.title}>
+                            {
+                              menu.items.map((item, index) => {
+                                return (
+                                    <li className="sfwc-column-voice" key={index}>
+                                      <a href={item.url}>{item.title}</a>
+                                    </li>
+                                )
+                              })
+                            }
+                          </ul>
+                        </div>
                       </div>
-                    </div>
-                )
-              })
-            }
+                  )
+                })
+              }
+            </div>
           </div>
-          <div className="footer-legal">
+          <div className="footer-legal-container">
+            <div className="footer-legal">
             <div className="sfwc-legal-section">
               <div className="credits">
                 <div className="sky-logo-container">
@@ -213,6 +216,7 @@ export const Footer = () => {
                 }
               </nav>
             </div>
+          </div>
           </div>
         </footer>
         <div className="footer-spectrumLine"></div>
