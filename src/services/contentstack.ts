@@ -124,7 +124,7 @@ export const getEntryByUrl = async <T>(
 ) => {
   try {
     let result: { entries: T[] } | null = null;
-    console.log("Stack", Stack);
+
     if (!Stack) {
       throw new Error(
         "===== No stack initialization found====== \n check environment variables: \
