@@ -1,0 +1,16 @@
+CONTENTSTACK_API_KEY=0
+CONTENTSTACK_DELIVERY_TOKEN=0
+CONTENTSTACK_ENVIRONMENT=development
+CONTENTSTACK_BRANCH=main
+# For other branches add CONTENTSTACK_BRANCH=YOUR_BRANCH_NAME by default it is set to main
+
+CONTENTSTACK_HOST=eu-cdn.contentstack.com
+# For EU region add CONTENTSTACK_HOST=eu-cdn.contentstack.com
+
+CONTENTSTACK_API_HOST=api.contentstack.io
+# For EU region add CONTENTSTACK_API_HOST=eu-api.contentstack.com
+
+# For live preview
+CONTENTSTACK_PREVIEW_TOKEN=0
+
+DISABLE_ESLINT_PLUGIN=true
