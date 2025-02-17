@@ -27,8 +27,10 @@ const SkyOffersModal = ({show, setShow, title, body}: SkyOffersModalProps) => {
     <Modal.Body className="sky-offers-modal-body">
       <Container>
         <Row className={"justify-content-center align-items-center"}>
-          <Col md={8} className="sky-offers-modal-body-content">
-            {body}
+          <Col md={8}>
+            <div className="sky-offers-modal-body-content">
+              {body}
+            </div>
           </Col>
         </Row>
       </Container>

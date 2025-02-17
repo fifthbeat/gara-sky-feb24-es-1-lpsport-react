@@ -354,6 +354,30 @@ a {
 	.sky-offers-modal-body-content {
 		overflow-y: scroll;
 		max-height: 70vh;
+		padding: 1rem;
+		line-height: 1.5rem;
+
+		strong {
+			font-family: SkyMedium;
+		}
+
+		h3, .h3 {
+			font-family: SkyMedium;
+			color: #4D4D4D;
+			font-size: 22px;
+			margin-bottom: 1rem;
+		}
+
+		.card {
+			border: 1px solid #E6E6E6;
+			padding: 1rem;
+			margin-bottom: 3rem;
+			border-radius: 4px;
+
+			hr {
+				border-top: #E6E6E6 0px solid;
+			}
+		}
 
 		&::-webkit-scrollbar {
 			display: none;
